@@ -1,0 +1,13 @@
+class CreateFindings < ActiveRecord::Migration
+  def change
+    create_table :findings do |t|
+      t.string :name
+      t.string :description
+      t.string :requirement
+      t.text :recommendation
+      t.string :risk
+
+      t.timestamps
+    end
+  end
+end

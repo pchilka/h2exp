@@ -1,0 +1,30 @@
+<div id="finding_list">
+<h1>Requirements</h1>
+
+<table>
+  <tr>
+    <th align="left">REQUIREMENT</th>
+    <th align="left">SHORT DESCRIPTION</th>
+    <th align="left">LONG DESCRIPTION</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @requirements.each do |requirement| %>
+	<tr class="<%= cycle('list_line_odd','list_line_even') %>">
+    <td class="list_requirement"><%= requirement.reference %></td>
+    <td class="list_description"><%= requirement.shortdesc %></td>
+    <td class="list_description"><%= requirement.longdesc %></td>
+    <td class="list_actions">
+    <%= link_to 'Show', requirement %>
+    <%= link_to 'Edit', edit_requirement_path(requirement) %>
+    <%= link_to 'Destroy', requirement, confirm: 'Are you sure?', method: :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Requirement', new_requirement_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  requirement: MyString
+  finding: MyText
+  risk: MyString
+
+two:
+  requirement: MyString
+  finding: MyText
+  risk: MyString

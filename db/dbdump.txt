@@ -1,0 +1,22 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
+INSERT INTO "schema_migrations" VALUES('20111216170837');
+INSERT INTO "schema_migrations" VALUES('20111216172725');
+INSERT INTO "schema_migrations" VALUES('20111216205025');
+CREATE TABLE "findings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "requirement" varchar(255), "finding" text, "risk" varchar(255), "created_at" datetime, "updated_at" datetime);
+INSERT INTO "findings" VALUES(1,'45 C.F.R. § 164.308 (a)(1)(i): Security Management Process','No formal process to manage security violations or sanctions','HIGH','2011-12-16 17:40:22.757667','2011-12-16 19:57:36.454919');
+INSERT INTO "findings" VALUES(3,'45 C.F.R. § 164.308 (a)(1)(ii)(A): Risk Analysis','Vulnerability assessments are performed on an Ad Hoc basis when risks are identified','LOW','2011-12-16 19:56:21.465630','2011-12-16 19:57:22.078097');
+INSERT INTO "findings" VALUES(4,'45 C.F.R. § 164.308 (a)(1)(ii)(B): Risk Management','Formal training in security and privacy is not provided','HIGH','2011-12-16 19:59:21.739941','2011-12-16 19:59:21.739941');
+INSERT INTO "findings" VALUES(5,'45 C.F.R. § 164.308 (a)(1)(ii)(B): Information System Activity Review','There is no regular review of system access logs','HIGH','2011-12-16 20:01:33.083453','2011-12-16 20:02:27.922590');
+INSERT INTO "findings" VALUES(6,'45 C.F.R. § 164.308 (a)(2): Assigned Security Responsibility.','Lack of assigned personnel for security roles','LOW','2011-12-16 20:06:42.068126','2011-12-16 20:07:17.614159');
+CREATE TABLE "requirements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "reference" varchar(255), "shortdesc" varchar(255), "longdesc" text, "created_at" datetime, "updated_at" datetime);
+INSERT INTO "requirements" VALUES(1,'45 C.F.R. § 164.308 (a)(1)(i)','Security Management Process','Standard: Security management process. Implement policies and procedures to prevent, detect, contain, and correct security violations. 
+','2011-12-16 20:52:15.038101','2011-12-16 20:52:15.038101');
+INSERT INTO "requirements" VALUES(2,'45 C.F.R. § 164.308 (a)(1)(ii)(A)','Risk Analysis','Risk analysis (Required). Conduct an accurate and thorough assessment of the potential risks and vulnerabilities to the confidentiality, integrity, and availability of electronic protected health information held by the covered entity
+','2011-12-16 20:52:48.723028','2011-12-16 20:52:48.723028');
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('findings',6);
+INSERT INTO "sqlite_sequence" VALUES('requirements',2);
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+COMMIT;

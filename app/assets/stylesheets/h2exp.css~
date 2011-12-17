@@ -1,0 +1,60 @@
+/* Global styles */
+
+/* Styles for findings/index */
+
+#finding_list table {
+        border-collapse: collapse;
+}
+
+#finding_list table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#finding_list .list_image {
+  width:        60px;
+  height:       70px;
+}
+
+#finding_list .list_requirement {
+  width:        20%;
+}
+
+#finding_list .list_description {
+  width:        70%;
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#finding_list .list_risk {
+  width:        10%;
+}
+
+#finding_list .list_description dl {
+        margin: 0;
+}
+
+#finding_list .list_description dt {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#finding_list .list_description dd {
+        margin: 0;
+}
+
+#finding_list .list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+
+#finding_list .list_line_even {
+  background:   #e0f8f8;
+}
+
+#finding_list .list_line_odd {
+  background:   #f8b0f8;
+}
